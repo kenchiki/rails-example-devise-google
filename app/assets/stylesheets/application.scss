@@ -1,0 +1,18 @@
+@import "bootstrap_variables";
+@import "bootstrap";
+@import "module_variables";
+@import "module/module";
+
+#header {
+  background: #D2E3E1;
+  padding: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#container {
+  @include container();
+  margin-top: 50px;
+}

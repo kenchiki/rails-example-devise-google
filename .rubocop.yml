@@ -1,0 +1,63 @@
+
+# 自動生成されるものはチェック対象から除外する
+AllCops:
+  Exclude:
+    - 'vendor/**/*' # rubocop config/default.yml
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/*'
+    - 'Gemfile'
+    - 'spec/*'
+  DisplayCopNames: true
+
+# ============================================================
+# Style
+# ============================================================
+# 日本語コメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# ドキュメントの無い public class を許可する
+Style/Documentation:
+  Enabled: false
+
+# !! のイディオムは使ってもよいと思うので
+Style/DoubleNegation:
+  Enabled: false
+
+# まだ対応するには早い（3.0で不要になる）
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# scope 等は複数行でも lambda ではなく ->{} を使いたい
+Style/Lambda:
+  EnforcedStyle: literal
+
+# 1_000_000 と区切り文字が 2 個以上必要になる場合のみ _ 区切りを必須にする
+Style/NumericLiterals:
+  MinDigits: 7
+
+# routes内容を把握するため、空のメソッドを許可する
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+# 同名のメソッドがある場合にローカル変数に `_` を付ける、
+# 一時変数として `_` を付ける、
+# というテクニックは頻出する
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+
+# ============================================================
+# Metrics
+# ============================================================
+# すぐに引っかかるので20までは許容したい（default:15）
+Metrics/AbcSize:
+  Max: 18
+
+# 80では短すぎる。かといって長すぎてもgithub上のコードレビューがやり辛いという問題があるので制限は必要
+Metrics/LineLength:
+  Max: 120
+
+# default:10
+Metrics/MethodLength:
+  Max: 10
