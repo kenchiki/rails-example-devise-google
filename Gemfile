@@ -12,7 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'simple_form'
-gem 'bootstrap', '~> 4.2.1'
+gem "bootstrap", '>= 4.3.1'
 gem 'haml-rails'
 gem 'devise'
 gem 'omniauth-google-oauth2'
